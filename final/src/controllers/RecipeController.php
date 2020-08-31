@@ -2,11 +2,12 @@
 
 namespace controllers;
 
-require __DIR__.'/../models/RecipeModel.php';
+require __DIR__ . '/../models/RecipeModel.php';
 
 use models\RecipeModel;
 
-class RecipeController {
+class RecipeController
+{
     private $model;
 
     public function __construct()
@@ -18,14 +19,14 @@ class RecipeController {
     {
         $recipes = $this->model->getAll();
 
-        require __DIR__.'/../views/index.php';
+        require __DIR__ . '/../views/index.php';
     }
 
     public function show(int $id): void
     {
         $recipe = $this->model->getById($id);
 
-        require __DIR__.'/../views/show.php';
+        require __DIR__ . '/../views/show.php';
     }
 
     public function add(): void
@@ -40,7 +41,7 @@ class RecipeController {
             }
         }
 
-        require __DIR__.'/../views/form.php';
+        require __DIR__ . '/../views/form.php';
     }
 
     private function validate(array $recipe): array
@@ -51,8 +52,8 @@ class RecipeController {
         if (empty($recipe['description'])) {
             $errors[] = 'The description is required';
         }
-        if (!empty($recipe['title']) && $recipe['title'] > 255) {
-            $errors[] = 'The title should be < 255 characters';
+        if (!empty($recipe['title']) && strlen($recipe['title']) > 255) {
+            $errors[] = 'The title should be less than 255 characters';
         }
 
         return $errors ?? [];
