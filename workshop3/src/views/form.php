@@ -9,7 +9,7 @@
         <a href="/">Home</a>
         <h1>Add Your Recipe</h1>
 
-        <?php foreach($errors as $error) : ?>
+        <?php foreach ($errors as $error) : ?>
             <p><?= $error ?></p>
         <?php endforeach; ?>
 

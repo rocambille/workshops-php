@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__.'/../config.php';
 require __DIR__.'/../src/controllers/RecipeController.php';
 
 use controllers\RecipeController;

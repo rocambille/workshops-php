@@ -31,7 +31,8 @@ function addRecipe(): void
     require __DIR__ . '/../views/form.php';
 }
 
-function validateRecipe(array $recipe) {
+function validateRecipe(array $recipe): array
+{
     if (empty($recipe['title'])) {
         $errors[] = 'The title is required';
     }

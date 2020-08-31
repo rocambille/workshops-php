@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-$connection = new PDO("mysql:host=". SERVER . ";dbname=". DATABASE .";charset=utf8", USER, PASSWORD);
+$connection = new PDO("mysql:host=" . SERVER . ";dbname=" . DATABASE . ";charset=utf8", USER, PASSWORD);
 
 $statement = $connection->query('SELECT id, title FROM recipe');
 $recipes = $statement->fetchAll(PDO::FETCH_ASSOC);

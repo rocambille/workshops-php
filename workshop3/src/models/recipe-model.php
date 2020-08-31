@@ -29,13 +29,13 @@ function getRecipeById(int $id): array
     return $recipe;
 }
 
-function saveRecipe(string $title, string $description): void
+function saveRecipe(array $recipe): void
 {
     $connection = createConnection();
 
     $query = 'INSERT INTO recipe(title, description) VALUES (:title, :description)';
     $statement = $connection->prepare($query);
-    $statement->bindValue(':title', $title, PDO::PARAM_STR);
-    $statement->bindValue(':description', $description, PDO::PARAM_STR);
+    $statement->bindValue(':title', $recipe['title'], PDO::PARAM_STR);
+    $statement->bindValue(':description', $recipe['description'], PDO::PARAM_STR);
     $statement->execute();
 }

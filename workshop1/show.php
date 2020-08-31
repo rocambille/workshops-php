@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-$connection = new PDO("mysql:host=". SERVER . ";dbname=". DATABASE .";charset=utf8", USER, PASSWORD);
+$connection = new PDO("mysql:host=" . SERVER . ";dbname=" . DATABASE . ";charset=utf8", USER, PASSWORD);
 
 $query = 'SELECT title, description FROM recipe WHERE id=:id';
 $statement = $connection->prepare($query);
