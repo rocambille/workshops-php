@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     if (empty($recipe['description'])) {
         $errors[] = 'The description is required';
     }
-    if (!empty($recipe['title']) && $recipe['title']>255) {
-        $errors[] = 'The title should be < 255 characters';
+    if (!empty($recipe['title']) && strlen($recipe['title']) > 255) {
+        $errors[] = 'The title should be less than 255 characters';
     }
 
     if (empty($errors)) {

@@ -4,7 +4,8 @@ namespace models;
 
 use \PDO;
 
-class RecipeModel {
+class RecipeModel
+{
     private $connection;
 
     public function __construct()
